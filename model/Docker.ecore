@@ -7,8 +7,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="imagedocker"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="portdocker" upperBound="-1"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="volumedocker" upperBound="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="imagedocker" eType="#//ImageDocker"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imagedocker" lowerBound="1"
+        eType="#//ImageDocker" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="portdocker" upperBound="-1"
         eType="#//PortDocker" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="volumedocker" upperBound="-1"
