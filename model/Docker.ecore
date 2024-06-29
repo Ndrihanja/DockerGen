@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="DockerGen" nsURI="http://www.dockergen.com">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="DockerGen" nsURI="http://www.dockergen.com" nsPrefix="dm">
   <eClassifiers xsi:type="ecore:EClass" name="ServiceDocker" instanceClassName="Service">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="command" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="image" eType="#//ImageDocker"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="network" upperBound="-1"
+        eType="#//NetworkDocker" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" upperBound="-1" eType="#//PortDocker"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="volume" upperBound="-1"
+        eType="#//VolumeDocker" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="environment" upperBound="-1"
+        eType="#//EnvironmentVariable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" upperBound="-1"
+        eType="#//ServiceDocker"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortDocker" instanceClassName="Port">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -19,6 +31,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComposeDocker" instanceClassName="DockerCompose">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" upperBound="-1"
+        eType="#//ServiceDocker" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NetworkDocker" instanceClassName="Network">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
