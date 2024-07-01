@@ -32,7 +32,7 @@ Workflow {
 		}
 		language = StandardLanguage {
 			name = "org.xtext.docker.mydsl.MyDsl"
-			fileExtensions = "mydsl"
+			fileExtensions = "solo"
 			referencedResource = "platform:/resource/DockerCompose/model/dockerCompose.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}

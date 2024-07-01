@@ -9,17 +9,5 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: DockerCompose,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
- org.eclipse.equinox.common;bundle-version="3.16.0",
- org.eclipse.xtext.xbase.lib;bundle-version="2.35.0",
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+ org.eclipse.equinox.common;bundle-version="3.16.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-21
-Export-Package: org.xtext.docker.mydsl.generator,
- org.xtext.docker.mydsl.services,
- org.xtext.docker.mydsl.validation,
- org.xtext.docker.mydsl,
- org.xtext.docker.mydsl.parser.antlr.internal,
- org.xtext.docker.mydsl.formatting2,
- org.xtext.docker.mydsl.scoping,
- org.xtext.docker.mydsl.serializer,
- org.xtext.docker.mydsl.parser.antlr
-Import-Package: org.apache.log4j
