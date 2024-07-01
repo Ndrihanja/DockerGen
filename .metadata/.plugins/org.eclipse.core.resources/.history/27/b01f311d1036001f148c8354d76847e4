@@ -1,0 +1,59 @@
+Compose {
+    version "3.8"
+    service {
+        Service web {
+            image Image nginx {
+                tag "latest"
+            }
+            port {
+                Port {
+                    number 80
+                    protocol "tcp"
+                }
+            }
+            volume {
+                Volume {
+                    source "./data"
+                    target "/usr/share/nginx/html"
+                }
+            }
+            network {
+                Network mynetwork {
+                    driver "bridge"
+                }
+            }
+            environment {
+                Environment ENV_VAR {
+                    value "my_value"
+                }
+            }
+        }
+        Service db {
+            image Image postgres {
+                tag "13"
+            }
+            port {
+                Port {
+                    number 5432
+                    protocol "tcp"
+                }
+            }
+            volume {
+                Volume {
+                    source "./db-data"
+                    target "/var/lib/postgresql/data"
+                }
+            }
+            network {
+                Network mynetwork {
+                    driver "bridge"
+                }
+            }
+            environment {
+                Environment POSTGRES_PASSWORD {
+                    value "example"
+                }
+            }
+        }
+    }
+}
