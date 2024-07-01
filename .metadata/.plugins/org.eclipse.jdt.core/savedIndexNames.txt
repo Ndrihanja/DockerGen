@@ -1,0 +1,17 @@
+INDEX VERSION 1.134+/home/ditra/Documents/DSLPoject/.metadata/.plugins/org.eclipse.jdt.core
+4279638532.index
+1552060385.index
+646666843.index
+3922752648.index
+2179733563.index
+1944109493.index
+2295198251.index
+1865797976.index
+3448073067.index
+1508007587.index
+1041233911.index
+2308182753.index
+2591040587.index
+471302629.index
+4156867516.index
+2545591005.index
