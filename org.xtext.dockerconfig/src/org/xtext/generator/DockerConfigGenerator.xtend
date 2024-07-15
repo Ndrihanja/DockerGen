@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import dockerConfig.Service
 
 /**
  * Generates code from your model files on save.
@@ -16,10 +17,18 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class DockerConfigGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+			for(Service s: resource.allContents.toIterable.filter(typeof(Service))){
+			fsa.generateFile("docker-compose.yml", 
+			s.name+''':
+			 image:«s.image»
+			 «FOR port : s.ports»
+			  ports:
+			   - "«port.hostPort»:«port.containerPort»"
+ 			 «ENDFOR»
+ 			 «FOR volume : s.volumes»
+ 			  volumes:
+ 			   - "«volume.hostPath»:«volume.containerPath»"
+ 			 «ENDFOR»''')
+		}
 	}
 }
